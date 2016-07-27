@@ -1,5 +1,5 @@
 So I'm not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I'm going to start a series where I explore some algorithms coding problems.
-The problem
+
 
 So the coding challenge is given an array with N numbers m such that m < N and m is a natural number count the occurrences of m. 
 Solution
