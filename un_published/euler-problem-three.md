@@ -6,7 +6,7 @@ What is the largest prime factor of the number 600851475143 ?
 
 ###### Solution ######
 
-This one took a bit longer than I expected. My fist attempt was pretty naive. The idea was generate all the primes less than the number and then check if the number is divisible by the prime. At the end we simple return the largest prime number that divides the number evenly. This works up until we get to 600851475143. Then we start getting out of memory errors and it takes too long. The first attempt looks like this.
+This one took a bit longer than I expected. My first attempt was pretty naive. The idea was generate all of the primes less than the number and then check if the number is divisible by the prime. At the end we simply return the largest prime number that divides the number evenly. This works up until we get to 600851475143. Then we start getting 'out of memory' errors and it takes too long. The first attempt looks like this:
 
 ```javascript
 var findPrimesLessThan = function(number){
@@ -87,6 +87,6 @@ var findPrimeNumber = function(number){
   return primes;
 }
 ```
-This guy works much faster and doesn't give out of memory errors, but it works on an assumption that admittedly I have not proven. That the first prime we find using Fermat Factorization is indeed the largest prime number that exists. Now I believe it to be true, but I'm not sure how to prove it. I'm just going to have to do a bit more research. 
+This guy works much faster and doesn't give 'out of memory' errors, but it works on an assumption that admittedly I have not proven. That the first prime we find using Fermat Factorization is indeed the largest prime number that exists. Now I believe this to be true, but I'm not sure how to prove it. I'm just going to have to do a bit more research. 
 
 If you'd like to see the full code please see my daily [toy problem](https://github.com/charltonaustin/toy-problems/tree/master/euler-problem-3) exercises that I've been working on. It includes tests and a README.
