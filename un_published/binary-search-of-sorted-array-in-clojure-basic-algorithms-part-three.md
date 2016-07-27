@@ -75,22 +75,22 @@ For 1000000 element in the array using binary-search I got.
 {:average 29.451808820724487, :std-deviation 9.199826118870515}
 ```
 
-Insanely they were basically the same. It took about 5 mins to get the results back for 10,000 runs. So I decided to dial up the number of elements to 10,000,000 and reduce the number of runs to 100.
+Insanely, they were basically the same. It took about 5 mins to get the results back for 10,000 runs. So I decided to dial up the number of elements to 10,000,000 and reduce the number of runs to 100.
 
 
-For java-binary-search I got 
+For java-binary-search I got: 
 
 ```clojure
 {:average 870.9942288208008, :std-deviation 705.2356880437546}
 ```
 
-For binary-search I got 
+For binary-search I got: 
 
 ```clojure
 {:average 728.1910227966308, :std-deviation 441.7981992776274}
 ```
 
-There is some difference here. The standard deviations show that java-binary-search has a slightly wider spread, which means it could be faster in some cases with some outliers as compared to binary search. Since I didn't I decided to look at the implementation of binarySearch within Java itself. For the record here it is.
+There is some difference here. The standard deviations show that java-binary-search has a slightly wider spread, which means it could be faster in some cases with some outliers as compared to binary search. Since I didn't get that result,  I decided to look at the implementation of binarySearch within Java itself. For the record here it is:
 
 ```java
 private static <T> int indexedBinarySearch(List<? extends T> l, T key, Comparator<? super T> c) {
@@ -112,4 +112,4 @@ private static <T> int indexedBinarySearch(List<? extends T> l, T key, Comparato
 }
 ```
 
-This is actually the indexed version of binary search, but since we are using a vector/array I figured this would be the one that was getting used from Clojure (though I didn't confirm this). I'm not sure why the two implementations are so close together. I would love to see the byte code produced by each invocation. Maybe in a future post I will do exactly that. For now this will have to be good.
+This is actually the indexed version of binary search, but since we are using a vector/array I figured this would be the one that was getting used from Clojure (though I didn't confirm this). I'm not sure why the two implementations are so close together. I would love to see the byte code produced by each invocation. Maybe in a future post I will do exactly that. But For now, this will be good.
