@@ -69,7 +69,7 @@ Lex-permutations in our case doesn't do much. We already have a sorted vector so
 Vec-lex-permutations starts with [1..N] and then builds a new vector [[1..N]..[N..1]] by repeatedly calling iter-perm. Iter-perm will return a permutations of [1..N] until it gets to [N..1] and then it will return a nil which will end the iteration.
 
 
-Finally we come to the iter-perm function. This guys is where most of the work happens. I think it is instructive to walk through and example with [1 2] as the input to vec-lex-permutations and see what happens. Before we do that though on a high level this function takes in sequence [1..N] goes through permutations until it gets to [N..1] and then outputs nil after that. This nil is what signals the stop of vec-lex-permutations gives you the sequence of permutations [[1..N]..[N..1]].
+Finally we come to the iter-perm function. This is where most of the work happens. I think it is instructive to walk through example with [1 2] as the input to vec-lex-permutations and see what happens. Before that though, on a high level, this function takes in sequence [1..N] goes through permutations until it gets to [N..1] and then outputs nil after that. This nil is what signals the stop of vec-lex-permutations gives you the sequence of permutations [[1..N]..[N..1]].
 
 
 So what happens with [1 2] well in iter-perm we have.
